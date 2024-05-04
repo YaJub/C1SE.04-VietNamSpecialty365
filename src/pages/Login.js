@@ -5,6 +5,8 @@ import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Spinner } from '@material-tailwind/react';
 import { ROUTERS } from '../constants/Routers';
+import { Button, Form, Input } from 'antd';
+
 
 function Login() {
 	const [email, setEmail] = useState('');
@@ -32,7 +34,8 @@ function Login() {
 		handleCheckInput();
 	};
 	return (
-		<div className="fixed inset-0 z-[50] flex items-center bg-white">
+		<Form>
+			<div className="fixed inset-0 z-[50] flex items-center bg-white">
 			<div className="h-full w-full object-cover">
 				<img
 					src={loginImage}
@@ -149,6 +152,7 @@ function Login() {
 			</div>
       
 		</div>
+		</Form>
 	);
 }
 

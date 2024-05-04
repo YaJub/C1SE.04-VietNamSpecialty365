@@ -6,27 +6,32 @@ import { ROUTERS } from '../constants/Routers';
 import { LuShoppingBag } from 'react-icons/lu';
 import Logo from '../../src/image/Logo.png';
 import Cart from './Cart';
-import Search from 'antd/es/transfer/search';
 import { ShoppingBagIcon, User } from 'lucide-react';
 import { Avatar } from 'antd';
 import { IoToggleSharp } from 'react-icons/io5';
+import { useSearchParams } from 'react-router-dom';
+import { Button, Dropdown, Input, message } from 'antd';
+const { Search } = Input;
+
+// const SortOptions = {
+// 	'id-asc': 'Sort by popularity',
+// 	'price-asc': 'Sort by price: low to hight',
+// 	'price-desc': 'Sort by price: hight to low',
+// };
 
 export default function Header() {
-	const carts = useSelector((state) => state.cart.carts);
-
-	const [isShowCart, setShowCart] = useState(false);
-	const toggleShowCart = () => setShowCart(!isShowCart);
-	// const IoToggleSharp = () => Logo
-	// function Layout({ children }) {
-	// 	const isLoginPage = window.location.pathname === '';
-	  
-	// 	return (
-	// 	  <div>
-	// 		{!isLoginPage && <Header />}
-	// 		{children}
-	// 	  </div>
-	// 	);
-	//   }
+	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchValue, setSearchValue] = useState('');
+	function handleSearchProduct(value) {
+		setSearchParams((prevParams) => {
+			if (!searchValue) {
+				prevParams.delete('q');
+			} else {
+				prevParams.set('q', searchValue);
+			}
+			return prevParams;
+		});
+	}
 	return (
 		<>
 			<div className=" flex flex-row h-[100px] border border-[rgba(204, 199, 199, 0.35)] sticky top-0 z-40 bg-lime-950">
@@ -116,10 +121,16 @@ export default function Header() {
 								className="relative"
 								onClick={IoToggleSharp}
 							>
-								<Search size={20} />
-								<p className="flex justify-end absolute top-[-10px] right-[-10px] text-xs font-bold ">
-									{carts.length}
-								</p>
+								<Search
+									placeholder="Tìm đặc sản ưa thích"
+									value={searchValue}
+									onSearch={handleSearchProduct}
+									onChange={(e) =>
+										setSearchValue(e.target.value)
+									}
+									size={30}
+									allowClear
+								/>
 							</button>
 						</div>
 						{/* <div className="flex flex-row justify-end">
@@ -136,17 +147,13 @@ export default function Header() {
 						<div>
 							<button className="relative">
 								<NavLink to={ROUTERS.LOGIN}>
-									<Avatar size={35} /> 
+									<Avatar size={35} />
 								</NavLink>
-								<p className="flex justify-end absolute top-[-10px] right-[-10px] text-xs font-bold">
-									{carts.length}
-								</p>
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			{isShowCart && <Cart toggleShowCart={toggleShowCart} />}
 		</>
 	);
 }

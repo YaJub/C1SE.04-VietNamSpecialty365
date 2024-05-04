@@ -23,7 +23,7 @@ import Profile from './pages/Profile';
 import { ConfigProvider } from 'antd';
 import Blogs from './pages/Blogs';
 import About from './pages/About';
-import Forgot_Password from './pages/ForgotPassword';
+import ForgotPassword from './pages/ForgotPassword';
 import Contact from './pages/Contact'
 
 // import Discover from './pages/Discover';
@@ -42,6 +42,7 @@ const router = createBrowserRouter(
 			<Route path={ROUTERS.CART} element={<Cart />} />
 			<Route path={ROUTERS.CHECKOUT} element={<Checkout />} />
 			<Route path={ROUTERS.LOGIN} element={<Login />} />
+			<Route path={ROUTERS.FORGOT_PASSWORD} element={<ForgotPassword />} />
 			<Route path={ROUTERS.PROFILE} element={<Profile />} />
 			<Route path={ROUTERS.ORDER_HISTORY} element={<OrderHistory />} />
 			<Route path={ROUTERS.CONTACT} element={<Contact />} />

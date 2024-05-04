@@ -45,7 +45,7 @@ function Forgot_Password() {
             Quên Mật Khẩu
           </h1>
           <p className="leading-6">
-            Đừng lo ! Nó đã xảy ra. Vui lòng nhập địa chỉ email của bạn <br />
+            Đừng lo ! Vui lòng nhập địa chỉ email của bạn <br />
             và chúng tôi sẽ gửi OTP đến địa chỉ email này...
           </p>
           <form action="" onSubmit={(e) => handleSubmit(e)} className="mt-14">

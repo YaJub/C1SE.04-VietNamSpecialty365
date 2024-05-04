@@ -27,7 +27,7 @@ export default function ProductHeader() {
 			return prevParams;
 		});
 	}
-	function handleSearchProduct(vaue) {
+	function handleSearchProduct(value) {
 		setSearchParams((prevParams) => {
 			if (!searchValue) {
 				prevParams.delete('q');
