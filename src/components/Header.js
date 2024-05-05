@@ -146,10 +146,15 @@ export default function Header() {
 						</div> */}
 						<div>
 							<button className="relative">
-								<NavLink to={ROUTERS.LOGIN}>
+								<NavLink to={ROUTERS.PROFILE}>
 									<Avatar size={35} />
 								</NavLink>
 							</button>
+							{/* <button className="relative">
+								<NavLink to={ROUTERS.LOGIN}>
+									<Avatar size={35} />
+								</NavLink>
+							</button> */}
 						</div>
 					</div>
 				</div>

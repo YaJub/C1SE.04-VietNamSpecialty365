@@ -61,7 +61,7 @@ function Login() {
 							<h2 className=" text-[#8D8D8D] ">
 								Không có tài khoản? <br />
 								<Link
-									to="/signup"
+									to={ROUTERS.SIGNUP}
 									className="text-base text-yellow-900 font-semibold "
 								>
 									Đăng Kí

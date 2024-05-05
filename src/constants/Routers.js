@@ -13,6 +13,7 @@ export const ROUTERS = {
 	DISCOVER: '/discover',
 	STORY: '/story',
 	CONTACT: '/contact',
+	SIGNUP: '/signup',
 	FORGOT_PASSWORD: '/forgot_password'
 
 };

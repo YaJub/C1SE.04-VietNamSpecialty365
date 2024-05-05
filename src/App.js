@@ -24,6 +24,8 @@ import { ConfigProvider } from 'antd';
 import Blogs from './pages/Blogs';
 import About from './pages/About';
 import ForgotPassword from './pages/ForgotPassword';
+import SignUp from './pages/SignUp';
+import InputFormV2 from './InputFormV2';
 import Contact from './pages/Contact'
 
 // import Discover from './pages/Discover';
