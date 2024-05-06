@@ -1,5 +1,7 @@
 import React from 'react';
 import Banner from '../../src/image/BannerHome.jpg';
+import { NavLink } from 'react-router-dom';
+import { ROUTERS } from '../constants/Routers';
 const Home = () => {
 	return (
 		<div className="">
@@ -12,10 +14,10 @@ const Home = () => {
 
 				<div className="w-full h-full relative z-20 ">
 					<div className="flex flex-col items-start justify-start gap-[61px] max-w-full lg:gap-[30px_61px] mq750:gap-[15px_61px]">
-						<div className="absolute top-[248px] left-[760px] text-45xl font-oleo-script-swash-caps text-gray inline-block w-[547px]">
+						<div className="w-auto mt-[7%] ml-[35%] text-6xl font-bold  text-white text-center">
 							Hương Vị Việt Nam
 						</div>
-						<div className="absolute top-[398px] left-[421px] text-[23px] font-palatino-linotype text-center inline-block w-[1186px]">
+						<div className="w-auto mt-[7%] ml-[20%]  text-xl font-normal  text-white text-center">
 							<p className="m-0">
 								Duyệt qua hàng ngàn công thức nấu ăn đa dạng, từ
 								món ăn gia đình đến các món ăn đặc sản vùng miền
@@ -41,6 +43,12 @@ const Home = () => {
 								với giá cả cạnh tranh.
 							</p>
 						</div>
+						<NavLink to={ROUTERS.ABOUT} is>
+						<button class=" ml-11 text-4xl font-bold text-white text-center w-auto text-yellow-300 hover:text-yellow-600">
+							{' '}
+							Khám Phá
+						</button>
+					</NavLink>
 					</div>
 				</div>
 			</div>
